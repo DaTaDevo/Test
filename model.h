@@ -28,15 +28,16 @@ public :
         this->m_age = m.m_age;
         this->m_sex = m.m_sex;
     }
-    void saveinvector() override
-    {
-        _storage.push_back(*this);
-    }
-    void setmodel(std::string name, int age, std::string sex) override
+//    void saveinvector() override
+//    {
+//        _storage.push_back(*this);
+//    }
+    void addpeople(std::string name, int age, std::string sex) override
     {
         m_name = name;
         m_age = age;
         m_sex = sex;
+         _storage.push_back(*this);
     }
     std::string get_info_about(std::string name) override
     {
