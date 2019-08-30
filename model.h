@@ -39,7 +39,7 @@ public :
         m_sex = sex;
          _storage.push_back(*this);
     }
-    std::string findpeople(std::string name) override
+    Model findpeople(std::string name) override
     {
         std::vector<Model>::const_iterator iter_strg = _storage.cbegin();
 
@@ -47,7 +47,7 @@ public :
         {
             if ( iter_strg->m_name== name)
             {
-                return iter_strg.m_name + "\t" + std::to_string(iter_strg.m_age)+ "\t" + iter_strg.m_sex;
+                return iter_strg;
             }
         }
         return "Not Found!";
