@@ -39,13 +39,15 @@ public :
         m_sex = sex;
          _storage.push_back(*this);
     }
-    std::string get_info_about(std::string name) override
+    std::string findpeople(std::string name) override
     {
-        for(int i =0;i < _storage.size();i++)
+        std::vector<Model>::const_iterator iter_strg = _storage.cbegin();
+
+        for(iter_strg;iter_strg < _storage.cend();iter_strg++)
         {
-            if (_storage.at(i).m_name == name)
+            if ( iter_strg->m_name== name)
             {
-                return _storage.at(i).m_name + "\t" + std::to_string(_storage.at(i).m_age)+ "\t" + _storage.at(i).m_sex;
+                return iter_strg.m_name + "\t" + std::to_string(iter_strg.m_age)+ "\t" + iter_strg.m_sex;
             }
         }
         return "Not Found!";
