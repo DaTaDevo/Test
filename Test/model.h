@@ -2,7 +2,7 @@
 #define MODEL_H
 #include <vector>
 #include <fstream>
-//#include <stdlib.h>
+#include <stdlib.h>
 #include <string>
 
 class Model;
