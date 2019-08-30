@@ -5,13 +5,14 @@
 #include <stdlib.h>
 #include <string>
 
+class Model;
 
 class AbstractModel
 {
 public :
-    virtual void saveinvector() = 0;
-    virtual void setmodel(std::string, int , std::string) = 0;
-    virtual std::string get_info_about(std::string) = 0;
+    virtual void addPeople(std::string, int , std::string) = 0;
+    virtual Model findPeople(std::string) = 0;
+    virtual std::string toString(Model) = 0;
 };
 
 class  Model : public  AbstractModel
@@ -52,6 +53,7 @@ public :
         }
         return "Not Found!";
     }
+
 };
 
 
